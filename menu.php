@@ -104,7 +104,7 @@
                           </tfoot>
                         </table>
                       </div>
-                      <button onclick="placeOrder('luzon')">Order</button>
+                      <button class="btn btn-primary" onclick="placeOrder()">Order</button>
                     </div>
                   </div>
                 </div>
@@ -162,7 +162,7 @@
                           </tfoot>
                         </table>
                       </div>
-                      <button onclick="placeOrder('luzon')">Order</button>
+                      <button class="btn btn-primary" onclick="placeOrder()">Order</button>
                     </div>
                   </div>
                 </div>
@@ -220,7 +220,7 @@
                           </tfoot>
                         </table>
                       </div>
-                      <button onclick="placeOrder('luzon')">Order</button>
+                      <button class="btn btn-primary" onclick="placeOrder()">Order</button>
                     </div>
                   </div>
                 </div>

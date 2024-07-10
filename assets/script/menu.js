@@ -20,8 +20,14 @@ function addToCart(button) {
     let foodName = card.querySelector('.food-name').textContent;
     let foodPrice = parseFloat(card.querySelector('.food-price').textContent.replace('P ', ''));
     let quantity = parseInt(card.querySelector('.quantity-input').value);
+    let foodId = card.dataset.foodId; // Ensure this is correctly set in the HTML
 
-    let cartItem = cart.find(item => item.name === foodName);
+    if (!foodId) {
+        console.error('Food ID is not defined');
+        return;
+    }
+
+    let cartItem = cart.find(item => item.food_id === foodId);
     if (cartItem) {
         cartItem.quantity += quantity;
     } else {
@@ -29,7 +35,7 @@ function addToCart(button) {
             name: foodName,
             price: foodPrice,
             quantity: quantity,
-            food_id: card.dataset.foodId // Assuming you have a data attribute for food_id
+            food_id: foodId
         });
     }
 
@@ -71,9 +77,8 @@ function removeFromCart(index) {
     updateCart();
 }
 
-function placeOrder(region) {
+function placeOrder() {
     let orderData = {
-        region: region,
         cart: cart
     };
     console.log(orderData);
@@ -89,20 +94,25 @@ function placeOrder(region) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json();
+        return response.text(); // Get the raw text response
     })
-    .then(data => {
-        if (data.status === 'success') {
-            console.log('Order placed successfully:', data.message);
-            cart = []; // Clear cart after successful order
-            updateCart(); // Update cart display
-        } else {
-            console.error('Error placing order:', data.message);
-            // Handle error scenario if needed
+    .then(text => {
+        try {
+            const data = JSON.parse(text); // Attempt to parse JSON
+            if (data.status === 'success') {
+                console.log('Order placed successfully:', data.message);
+                cart = []; // Clear cart after successful order
+                updateCart(); // Update cart display
+            } else {
+                console.error('Error placing order:', data.message);
+                // Handle error scenario if needed
+            }
+        } catch (e) {
+            console.error('Failed to parse JSON response:', text);
+            // Handle non-JSON response if needed
         }
     })
     .catch((error) => {
         console.error('Error placing order:', error);
-
     });
 }

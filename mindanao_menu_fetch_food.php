@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
         
         echo '
                 <div class="menuItem col d-flex flex-column align-items-center justify-content-center">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem;" data-food-id="' . $foodId . '">
                         <img src="assets/pictures/items/' . $foodId . '.png" class="food-img card-img-top" alt="' . $foodName . '">
                         <div class="card-body">
                             <h5 class="food-name card-title">' . $foodName . '</h5>
