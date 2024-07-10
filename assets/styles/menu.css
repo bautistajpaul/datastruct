@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --color-primary: #a2836e;
+    --color-danger: #454140;
+    --color-success:#d4ac6e;
+    --color-warning:  #563f46;
+    --color-white: aliceblue;
+    --color-info-dark:#667292;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant:slategray;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark:antiquewhite;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+.header{
+    margin-top: 2vh !important;
+}
+.logo{
+    width: 20vw;
+    height: auto;
+}
+.popularTxt{
+    margin-top: 5vh !important;
+    margin-bottom: 2vh;
+    color: var(--color-dark);
+    font-size: 3vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+}
+.carousel{
+    width: 50vw;
+    border-radius: 2rem !important;
+    box-shadow: var(--box-shadow);
+}
+.carousel-item img{
+    border-radius: 2rem !important
+}
+.islandTxt{
+    margin-top: 5vh !important;
+    margin-bottom: 2vh;
+    color: var(--color-dark);
+    font-size: 3vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    
+}
+.islandBtn{
+    width: 30vw;
+    height: 20vh;
+    border-radius: 2rem !important;
+    background: var(--color-white) !important;
+    padding: var(--card-padding) !important;
+    box-shadow: 0 2rem 3rem var(--color-light) !important;
+    margin: 1vw;
+}
+.islandBtnTxt{
+    color: var(--color-dark);
+    font-size: 3vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+}
+.offcanvas{
+    width: 100% !important;
+}
+.offcanvas-title{
+    color: var(--color-dark);
+    font-size: 3vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+}
+.back-btn{
+    
+    color: var(--color-background) !important;
+    font-size: 2vw !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700 !important;
+    border-radius: 1rem !important;
+    background: var(--color-success) !important;
+    box-shadow: 0 2rem 3rem var(--color-light) !important;
+}
+.back-btn i {
+    margin: 0.5vw;
+}
+.back-btn span {
+    margin: 0.5vw;
+}
+.menuName{
+    color: aliceblue;
+}
+.card{
+    background-color: var(--color-light) !important;
+    width: 10vw;
+    margin-bottom: 2vh;
+    box-shadow: 0 2rem 3rem var(--color-light) !important;
+    border: none !important;
+    font-family: 'Poppins', sans-serif;
+}
+.card-body .food-qty span {
+    margin-right: 1rem !important;
+}
+.order-btn{
+    margin-top: 1rem !important;
+}
+.btn-primary{
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+.cart-content{
+    padding: 2rem;
+    background-color: white !important;
+    border: 2px solid rgb(177, 157, 157);
+    border-radius: 5px;
+}
